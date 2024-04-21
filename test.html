@@ -1,0 +1,25 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+<script>
+    var apiUrl = "http://localhost:3000/resume";
+
+    id=0;
+    async function getMyData(){
+        var response = await axios.get(apiUrl);
+        console.log(response.data[6]);
+        if(!response.data[6]){
+            console.log(true);
+        }
+        response.data.forEach(element => {
+            console.log(element);
+            if(element.id == 3)
+            {
+                return;
+            }
+        });
+    }
+
+    getMyData();
+
+    var id;;
+
+</script>
